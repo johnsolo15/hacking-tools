@@ -1,0 +1,9 @@
+www.hostname.com
+75
+80
+www.example.com
+80
+85
+www.something.com
+110
+120

@@ -1,0 +1,24 @@
+NAME
+    portscanner.sh
+
+USAGE
+    portscanner.sh [-t] [hostname startport stopport]
+
+DESCRIPTION
+    Scans the ports of a host and determines whether they
+    are open or not. The output lists each port scanned and writes whether
+    it is open or closed.
+
+OPTIONS
+
+    -t          set the timeout. Default is 2.
+
+Interactive Mode
+    Interactive mode can used by running portscanner without any options
+    or arguments. You will be prompted to manually input the hostname
+    startport and stopport.
+
+    Interactive mode can also be ran by piping inputs from a file using
+    cat. Eg. cat filename | portscanner.sh where filename is a file with
+    a hostname followed by startport on a new line followed by stopport
+    on a new line. The file can  have any number of host/port combinations.

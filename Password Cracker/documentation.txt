@@ -1,0 +1,19 @@
+NAME
+    sshbrute.py
+
+USAGE
+    sshbrute.py <-f filename | -g> <hostname> <username>
+
+DESCRIPTION
+    Uses SSH and the python pexpect library to remotely login into a Debian 6
+    system using either a dictionary attack or a brute force attack where the
+    password is three characters, lowercase, and alphanumerical. The output
+    will read "SUCCESS: <password> is correct" if login was successful or
+    "FAILURE: Password wasn't found" if login failed.
+
+OPTIONS
+    -g          use a brute force attack.
+    -f          use a dictionary attack.
+
+INPUT FILE FORMAT
+    Filename is a txt file with a list of passwords with one password per line.
