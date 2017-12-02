@@ -1,0 +1,15 @@
+This exploit uses a remote file inclusion vulnerability in the DVWA source
+code to inject malicious code that will steal the /etc/passwd file and the
+PHPSESSID cookie. The particular page that we are exploiting has code that
+sets a variable called file to whatever the page variable is set to in the
+URL. When we look in the source code for the page on the dvwa server we see
+the code include($file);. This will include whatever the file variable is in
+the source code of the web page. The file variable can be set in the URL by
+specifying what code the page variable points to. We can then run whatever
+code we want on the server by including it on the page. This exploit will
+use a bait link to trick a user into redirecting to the dvwa file inclusion
+page with the URL variable page set to our own malicious code. This malicious
+code will then execute on the dvwa server, copy the /etc/passwd file, and the
+PHPSESSID cookie. These to pieces of info will be sent via post to a recieving
+code on our attacking server. This code will then write the two pieces of
+information to files on the attacking computer.
